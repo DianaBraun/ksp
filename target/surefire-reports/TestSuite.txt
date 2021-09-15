@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: TestSuite
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 29.332 s <<< FAILURE! - in TestSuite
-afterTest(tests.Test2_Register)  Time elapsed: 11.134 s  <<< FAILURE!
-java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.quit()" because "this.driver" is null
-	at tests.Test2_Register.afterTest(Test2_Register.java:29)
-
