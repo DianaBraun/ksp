@@ -1,0 +1,6 @@
+tests/Test1_Auth.class
+tests/Test2_Register.class
+pages/AbstractPage.class
+tests/BaseTest.class
+pages/RegisterPage.class
+pages/LoginPage.class
