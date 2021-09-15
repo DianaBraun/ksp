@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 
 
-public   abstract class AbstractPage {
+public abstract class AbstractPage {
 
     protected static WebDriver driver;
     protected static WebDriverWait wait;
