@@ -1,11 +1,14 @@
 package tests;
 
 
+import com.github.javafaker.Faker;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import pages.RegisterPage;
 
-import static common.Constants.loginEmail;
-import static common.Constants.loginPassword;
+import static common.Constants.*;
 
 
 public class Test1_Auth extends BaseTest {

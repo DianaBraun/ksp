@@ -23,9 +23,4 @@ public class Test2_Register extends BaseTest {
         String email = faker.internet().emailAddress();
         registerSteps.fillInUserDetails(email, registerPassword);
     }
-
-    @AfterTest
-    public void afterTest() {
-        driver.quit();
-    }
 }
