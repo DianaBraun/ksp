@@ -20,17 +20,6 @@
             <class name="SearchResultTest"> </class>
         </classes>
     </test>
-<!--    <test name="Tests in Opera" >-->
-<!--        <parameter name="browser" value="opera"/>-->
-<!--        <parameter name="nodeUrl" value="http://localhost:4444/wd/hub"/>-->
-<!--        <classes>-->
-<!--            <class name="AuthTest"> </class>-->
-<!--            <class name="RegTest" > </class>-->
-<!--            <class name="BuyProductTest"> </class>-->
-<!--            <class name="WishlistTest"> </class>-->
-<!--            <class name="SearchTest"> </class>-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>
 
 
