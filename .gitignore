@@ -3,5 +3,6 @@
 /build/
 .idea
 .git
+.iml
 /allure-results/
 /alllure-report/
