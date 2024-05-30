@@ -2,7 +2,6 @@ package ShopPages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.checkerframework.checker.units.qual.C;
 
 import static com.codeborne.selenide.Selenide.$;
 

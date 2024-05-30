@@ -1,5 +1,4 @@
 import ShopPages.SearchPage;
-import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

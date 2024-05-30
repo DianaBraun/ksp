@@ -2,9 +2,7 @@ import ShopPages.LoginPage;
 import com.codeborne.selenide.Condition;
 import com.github.javafaker.Faker;
 import helpers.RetryAnalyzer;
-import io.qameta.allure.Description;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.open;

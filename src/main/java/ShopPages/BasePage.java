@@ -3,10 +3,6 @@ package ShopPages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.testng.Assert;
-
 
 import static com.codeborne.selenide.Selenide.$;
 

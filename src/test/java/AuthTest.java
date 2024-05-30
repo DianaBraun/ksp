@@ -2,7 +2,6 @@ import ShopPages.LoginPage;
 import com.codeborne.selenide.Condition;
 import helpers.ConfigReader;
 import helpers.RetryAnalyzer;
-import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
