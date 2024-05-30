@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeClass;
 
 import java.io.IOException;
 
-abstract public class BaseTest {
+public class BaseTest {
 
     @BeforeClass
     public void setUp() throws IOException {
