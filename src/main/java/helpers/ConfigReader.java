@@ -19,5 +19,12 @@ public class ConfigReader {
     public static String getPassword() throws IOException {
         return getPropertyObject().getProperty("password");
     }
-}
 
+    public static String getUrl() throws IOException {
+        return getPropertyObject().getProperty("url");
+    }
+
+    public static String getCheckoutUrl() throws IOException {
+        return getPropertyObject().getProperty("checkout_url");
+    }
+}

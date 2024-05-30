@@ -10,23 +10,22 @@ import java.io.IOException;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class AuthTest extends BaseTest{
+public class AuthTest extends BaseTest {
     LoginPage authPage = new LoginPage();
 
-    @Test(description = "Authorization")
+    @Test(description = "Successful authorization")
     public void successAuthTest() throws IOException {
         open("/");
         authPage.authorizeUser(ConfigReader.getUsername(), ConfigReader.getPassword());
-        Assert.assertTrue(authPage.getLoggedIn().isDisplayed());
+        Assert.assertTrue(authPage.getLoggedInIcon().isDisplayed());
     }
 
 
-    @Test(description = "Тест на неуспішну авторизацію із неправильним паролем", retryAnalyzer = RetryAnalyzer.class)
+    @Test(description = "Wrong password test", retryAnalyzer = RetryAnalyzer.class)
     void wrongPassAuthTest() throws IOException {
         open("/");
         authPage.authorizeUser(ConfigReader.getUsername(), "19111993test")
                 .getWrongPassMessage().shouldHave(Condition.text("Please check your e-mail address and password."));
         Assert.assertEquals(authPage.getWrongPassMessage().text(), "Please check your e-mail address and password.");
     }
-
 }

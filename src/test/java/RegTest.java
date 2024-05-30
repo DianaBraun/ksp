@@ -15,7 +15,7 @@ public class RegTest extends BaseTest {
     private final String email = faker.internet().emailAddress();
 
 
-    @Test(description = "Registration")
+    @Test(description = "Successful registration test")
     void successRegTest() {
         open("/");
         authPage.registerUser(email, "TestPassword1!", "TestPassword1!");
@@ -23,7 +23,7 @@ public class RegTest extends BaseTest {
         Assert.assertEquals(authPage.openRegPageText().text(), "REGISTRATION SUCCESSFUL");
     }
 
-    @Test(description = "Тест на неуспішну реєстрацію зі слабким паролем", retryAnalyzer = RetryAnalyzer.class)
+    @Test(description = "Weak password test", retryAnalyzer = RetryAnalyzer.class)
     void weakPassTest() {
         open("/");
         authPage.registerUser(email, "testPass", "testPass");

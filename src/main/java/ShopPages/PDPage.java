@@ -1,13 +1,15 @@
 package ShopPages;
 
 import com.codeborne.selenide.SelenideElement;
+
 import java.time.Duration;
+
 import static com.codeborne.selenide.ClickOptions.usingDefaultMethod;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.actions;
 
-public class PDPage extends BasePage{
+public class PDPage extends BasePage {
     private final SelenideElement premiumButton = $(byXpath("//button[@class=\"premium-details__button\"]"));
     private final SelenideElement pdpWishlistIcon = $("div .wishlist-heart--animated");
     private final SelenideElement wishListButton = $(".js-miniwishlist");
@@ -16,26 +18,26 @@ public class PDPage extends BasePage{
 
     public PDPage addProductToBasket() {
         actions().moveToElement(addToBasketButton).perform();
-        click(addToBasketButton);
-        logger.info("Added product to basket");
-        return new PDPage();
-    }
-    public PDPage addToWishlist() {
-        actions().moveToElement(pdpWishlistIcon).perform();
-        click(pdpWishlistIcon);
-        logger.info("Added product to wishlist");
-        return new PDPage();
+        addToBasketButton.click();
+        return this;
     }
 
-    public WishlistPage goToWishlist(){
-        click(wishListButton);
+    public PDPage addToWishlist() {
+        actions().moveToElement(pdpWishlistIcon).perform();
+        pdpWishlistIcon.click();
+        return this;
+    }
+
+    public WishlistPage goToWishlist() {
+        wishListButton.click();
         return new WishlistPage();
     }
 
     public PDPage buyPremium() {
-        premiumButton.click(usingDefaultMethod().timeout(Duration.ofSeconds(8)));
-        return new PDPage();
+        premiumButton.click(usingDefaultMethod().timeout(Duration.ofSeconds(10)));
+        return this;
     }
+
     public SelenideElement getBasketCount() {
         return basketCount;
     }

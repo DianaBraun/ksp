@@ -5,7 +5,6 @@ import com.codeborne.selenide.Condition;
 import com.github.javafaker.Faker;
 import helpers.ConfigReader;
 import helpers.RetryAnalyzer;
-import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -19,13 +18,13 @@ public class BuyProductTest extends BaseTest {
     LoginPage authPage = new LoginPage();
     CheckoutPage checkoutPage = new CheckoutPage();
 
-    @Test(description = "Тест на покупку підписки Premium")
-    void buyPremiumTest()  {
+    @Test(description = "Buy Premium membership Test")
+    void buyPremiumTest() throws IOException {
         open("/premium-membership");
         checkoutPage.acceptCookie();
         pdPage.buyPremium()
                 .getBasketCount().shouldHave(Condition.text("1"));
-        open("https://keller:sports17@checkout-stage.keller-sports.com");
+        open(ConfigReader.getCheckoutUrl());
         checkoutPage.getAddedPremium()
                 .goToCheckout()
                 .checkoutRegister("test", "test", faker.internet().emailAddress(), "19111994qQ!")
@@ -35,13 +34,13 @@ public class BuyProductTest extends BaseTest {
         Assert.assertEquals(checkoutPage.getThankYouText().text(), "DONE!");
     }
 
-    @Test(description = "Тест на успішну покупку товара авторизованим користувачем", retryAnalyzer = RetryAnalyzer.class)
+    @Test(description = "Successful item purchase test", retryAnalyzer = RetryAnalyzer.class)
     void buyProductTest() throws IOException {
         open("/p/nike-fury-3.0-headband-REQNI00O000.html");
         authPage.acceptCookie();
         pdPage.addProductToBasket()
                 .getBasketCount().shouldHave(Condition.text("1"));
-        open("https://keller:sports17@checkout-stage.keller-sports.com");
+        open(ConfigReader.getCheckoutUrl());
         checkoutPage.getAddedProduct()
                 .goToCheckout()
                 .checkoutLogin(ConfigReader.getUsername(), ConfigReader.getPassword())
