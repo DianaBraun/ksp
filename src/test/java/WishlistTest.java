@@ -13,7 +13,7 @@ public class WishlistTest extends BaseTest {
     WishlistPage wishlistPage = new WishlistPage();
 
     @BeforeMethod
-    void beforeTest() {
+    void openProductAndAddtoWishlist() {
         open("/p/nike-fury-3.0-headband-REQNI00O000.html");
         pdPage.acceptCookie();
         pdPage.addToWishlist()
